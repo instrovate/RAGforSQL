@@ -4,7 +4,8 @@ import os
 import requests
 from llama_index.core import SQLDatabase, VectorStoreIndex
 from llama_index.llms.openai import OpenAI
-from llama_index.core.query_engine import SQLAutoVectorQueryEngine
+from llama_index.core.query_engine import NLSQLTableQueryEngine
+
 
 st.set_page_config(page_title="RAG over SQL", page_icon="🧠")
 st.title("🧠 RAG Over SQL (LlamaIndex + Streamlit + SQLite)")
@@ -39,7 +40,7 @@ if st.checkbox("🔍 Preview DB Schema"):
 try:
     llm = OpenAI(model="gpt-3.5-turbo", temperature=0)
     sql_db = SQLDatabase.from_uri(f"sqlite:///{db_path}")
-    engine = SQLAutoVectorQueryEngine(sql_db, llm=llm)
+    engine = NLSQLTableQueryEngine(sql_database=sql_db, llm=llm)
 except Exception as e:
     st.error(f"Engine init failed: {e}")
     st.stop()
