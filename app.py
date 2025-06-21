@@ -10,6 +10,9 @@ from llama_index.core.query_engine import NLSQLTableQueryEngine
 st.set_page_config(page_title="RAG over SQL", page_icon="🧠")
 st.title("🧠 RAG Over SQL (LlamaIndex + Streamlit + SQLite)")
 
+   # Set OpenAI Key from Streamlit secrets
+        os.environ["OPENAI_API_KEY"] = st.secrets["openai_api_key"]
+
 # Step 1: Upload or load default DB
 uploaded_file = st.file_uploader("Upload your own SQLite .db file", type=["db"])
 if uploaded_file:
