@@ -7,7 +7,7 @@ from llama_index.llms.openai import OpenAI
 from llama_index.core.query_engine import NLSQLTableQueryEngine
 
 
-st.set_page_config(page_title="RAG over SQL", page_icon="🧠")
+st.set_page_config(page_title="LLM writes SQL for your Data ", page_icon="🧠")
 st.title("🧠 RAG Over SQL (LlamaIndex + Streamlit + SQLite)")
 
    # Set OpenAI Key from Streamlit secrets
