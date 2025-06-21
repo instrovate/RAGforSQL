@@ -10,6 +10,36 @@ from llama_index.core.query_engine import NLSQLTableQueryEngine
 st.set_page_config(page_title="LLM writes SQL for your Data ", page_icon="🧠")
 st.title("🧠 LLM writes SQL for your Data ( Using RAG Over SQL )")
 
+st.markdown("---")
+st.subheader("🧪 Try with Sample Databases")
+
+st.markdown("""
+Choose from these ready-to-use `.db` files:
+
+- [📥 Employee Database](https://github.com/instrovate/RAGforSQL/raw/main/Instrovate_sample_employee.db)
+- [📥 Sales Database](https://github.com/instrovate/RAGforSQL/raw/main/Instrovate_sample_sales.db)
+- [📥 Courses + Enrollments Database](https://github.com/instrovate/RAGforSQL/raw/main/Instrovate_sample_courses.db)
+
+""")
+
+st.subheader("💬 Sample Questions You Can Ask")
+
+st.markdown("""
+**🧑‍💼 Employee DB**
+- Who is the highest paid employee?
+- What’s the average salary in Sales?
+
+**📊 Sales DB**
+- Which region had the highest revenue?
+- What is the total quantity sold for Laptops?
+
+**🎓 Courses DB**
+- Who is enrolled in Python Basics?
+- How many students completed the Data Science course?
+""")
+
+st.markdown("---")
+
    # Set OpenAI Key from Streamlit secrets
 os.environ["OPENAI_API_KEY"] = st.secrets["openai_api_key"]
 
