@@ -1,7 +1,8 @@
 streamlit
-llama-index>=0.10.43
+llama-index==0.10.43
 openai
 sqlalchemy
 sqlite-utils
 tqdm
 duckdb
+requests
