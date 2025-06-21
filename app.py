@@ -4,7 +4,7 @@ import os
 import requests
 from llama_index.core import SQLDatabase
 from llama_index.llms.openai import OpenAI
-from llama_index.indices.struct_store import NLSQLTableQueryEngine
+from llama_index.experimental.query_engine import NLSQLTableQueryEngine
 
 st.set_page_config(page_title="RAG over SQL", page_icon="🧠")
 st.title("🧠 RAG Over SQL (LlamaIndex + Streamlit + SQLite)")
